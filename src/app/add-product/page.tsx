@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 
 export const metadata = {
   title: "Add-Product",
+  metadataBase: "http://localhost:3000",
 };
 
 async function addProduct(formData: FormData) {
@@ -31,10 +32,10 @@ async function addProduct(formData: FormData) {
 export default function addProductPage() {
   return (
     <div>
-      <h1 className="mb- text-xl font-bold"> Add Product</h1>
+      <h1 className="mb-3 text-xl font-bold"> Add Product</h1>
       <form action={addProduct}>
         <input
-          className="mb- input input-bordered w-full"
+          className="input input-bordered mb-3 w-full"
           required
           name="name"
           placeholder="Name"
@@ -46,18 +47,18 @@ export default function addProductPage() {
           className="textarea textarea-bordered w-full "
         />
         <input
-          className="mb- input input-bordered w-full"
+          className="input input-bordered mb-3 w-full"
           required
           name="ImageUrl"
           placeholder="Image URL"
           type="url"
         />
         <input
-          className="mb- input input-bordered w-full"
+          className="input input-bordered mb-3 w-full"
           required
           name="price"
           placeholder="Price"
-          type="numbe"
+          type="number"
         />
         <button type="submit" className="btn btn-primary btn-block">
           {" "}
