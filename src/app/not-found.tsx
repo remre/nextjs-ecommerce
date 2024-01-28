@@ -1,3 +1,3 @@
 export default function NotFoundPage() {
-  return <div className="justify-bottom mt-500">Page not found.</div>;
+  return <div className=" py-10">Page not found.</div>;
 }
