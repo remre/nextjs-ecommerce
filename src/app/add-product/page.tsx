@@ -12,10 +12,10 @@ async function addProduct(formData: FormData) {
 
   const name = formData.get("name")?.toString();
   const description = formData.get("description")?.toString();
-  const ImageUrl = formData.get("ImageUrl")?.toString();
+  const imageUrl = formData.get("imageUrl")?.toString();
   const price = Number(formData.get("price") || 0);
 
-  if (!name || !description || !ImageUrl || !price) {
+  if (!name || !description || !imageUrl || !price) {
     throw Error("Missing required fields");
   }
 
@@ -23,7 +23,7 @@ async function addProduct(formData: FormData) {
     data: {
       name,
       description,
-      ImageUrl,
+      imageUrl,
       price,
     },
   });
@@ -50,7 +50,7 @@ export default function addProductPage() {
         <input
           className="input input-bordered mb-3 w-full"
           required
-          name="ImageUrl"
+          name="imageUrl"
           placeholder="Image URL"
           type="url"
         />
