@@ -14,11 +14,15 @@ export async function incrementProductQuantity(productId: string) {
       data: { quantity: { increment: 1 } },
     });
   } else {
-    await prisma.cartItem.create({
+    await prisma.cart.update({
+      where: { id: cart.id },
       data: {
-        cartId: cart.id,
-        productId,
-        quantity: 1,
+        items: {
+          create: {
+            productId,
+            quantity: 1,
+          },
+        },
       },
     });
   }
