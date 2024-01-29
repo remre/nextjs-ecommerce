@@ -4,7 +4,7 @@ import { cookies } from "next/dist/client/components/headers";
 import { Cart, Prisma, CartItem } from "@prisma/client";
 import { prisma } from "./prisma";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "../AuthOptions";
 
 export type CartWithProduct = Prisma.CartGetPayload<{
   include: {
@@ -21,19 +21,6 @@ export type ShoppingCart = CartWithProduct & {
 };
 
 export async function getCart(): Promise<ShoppingCart | null> {
-<<<<<<< HEAD
-  const localCartId = cookies().get("localCartId")?.value;
-  const cart = localCartId
-    ? await prisma.cart.findUnique({
-        where: {
-          id: localCartId,
-        },
-        include: {
-          items: { include: { product: true } },
-        },
-      })
-    : null;
-=======
   const session = await getServerSession(authOptions);
 
   let cart: CartWithProduct | null = null;
@@ -59,7 +46,6 @@ export async function getCart(): Promise<ShoppingCart | null> {
         })
       : null;
   }
->>>>>>> cedcca0a576eb76febcdc5c49189135b91449866
 
   if (!cart) {
     return null;
