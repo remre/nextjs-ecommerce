@@ -5,7 +5,7 @@ interface SearchPageProps {
   searchParams: { query: string };
 }
 
-export function generateMetaData({ searchParams: { query } }: SearchPageProps) {
+export function generateMetadata({ searchParams: { query } }: SearchPageProps) {
   return {
     title: `Search results for ${query} - flowmazon`,
   };
