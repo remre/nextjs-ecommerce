@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+<<<<<<< HEAD
 import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer";
 import SessionProvider from "./SessionProvider";
 // make changes
+=======
+import Footer from "./Footer";
+import SessionProvider from "./SessionProvider";
+import Navbar from "./Navbar/Navbar";
+
+>>>>>>> cedcca0a576eb76febcdc5c49189135b91449866
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
