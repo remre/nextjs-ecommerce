@@ -1,4 +1,4 @@
-import { GetCart } from "@/lib/db/cart";
+import { getCart } from "@/lib/db/cart";
 import CartEntry from "./CartEntry";
 import setProductQuantity from "./actions";
 import { formatPrice } from "@/lib/Format";
@@ -8,7 +8,7 @@ export const metadata = {
 };
 
 export default async function CartPage() {
-  const cart = await GetCart();
+  const cart = await getCart();
 
   return (
     <div>

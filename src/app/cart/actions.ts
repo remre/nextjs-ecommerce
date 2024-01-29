@@ -1,6 +1,6 @@
 "use server";
 
-import { GetCart, createCart } from "@/lib/db/cart";
+import { getCart, createCart } from "@/lib/db/cart";
 import { prisma } from "@/lib/db/prisma";
 import { revalidatePath } from "next/cache";
 
@@ -8,7 +8,7 @@ export default async function setProductQuantity(
   productId: string,
   quantity: number,
 ) {
-  const cart = (await GetCart()) ?? (await createCart());
+  const cart = (await getCart()) ?? (await createCart());
   const articleInCart = cart.items.find((item) => item.productId === productId);
 
   if (quantity === 0) {

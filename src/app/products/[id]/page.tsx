@@ -5,7 +5,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { cache } from "react";
 import AddToCartButton from "./AddToCartButton";
-import { incrementProductQuality } from "./actions";
+import { incrementProductQuantity } from "./actions";
 
 interface ProductPageProps {
   params: {
@@ -30,7 +30,7 @@ export async function generateMetaData({
     title: product.name + " - flowmazon",
     description: product.description,
     openGraph: {
-      images: [{ url: product.ImageUrl }],
+      images: [{ url: product.imageUrl }],
     },
   };
 }
@@ -43,7 +43,7 @@ export default async function ProductPage({
   return (
     <div className="flex flex-col  gap-4 lg:flex-row lg:items-center">
       <Image
-        src={product.ImageUrl}
+        src={product.imageUrl}
         alt={product.name}
         width={500}
         height={500}
@@ -56,7 +56,7 @@ export default async function ProductPage({
         <p className="py-6">{product.description} </p>
         <AddToCartButton
           productId={product.id}
-          incrementProductQuality={incrementProductQuality}
+          incrementProductQuantity={incrementProductQuantity}
         ></AddToCartButton>
       </div>
     </div>

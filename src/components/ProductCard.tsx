@@ -20,7 +20,7 @@ export default function ProductCard({ product }: ProductCardProps) {
     >
       <figure>
         <Image
-          src={product.ImageUrl}
+          src={product.imageUrl}
           alt={product.name}
           width={800}
           height={400}
