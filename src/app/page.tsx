@@ -31,28 +31,6 @@ export default async function Home({
     take: pageSize + (currentPage === 1 ? heroItemCount : 0),
   });
   return (
-<<<<<<< HEAD
-    <div>
-      <div className="hero rounded-xl bg-base-200">
-        <div className="hero-content flex-col lg:flex-row">
-          <Image
-            src={products[0].imageUrl}
-            alt={products[0].name}
-            width={400}
-            height={800}
-            className="w-full max-w-sm rounded-lg shadow-2xl"
-            priority
-          />
-          <div>
-            <h1 className="text-5xl font-bold ">{products[0].name}</h1>
-            <p className="py-6 ">{products[0].description}</p>
-            <Link
-              href={`/products/${products[0].id}`}
-              className="btn btn-primary"
-            >
-              Check it out
-            </Link>
-=======
     <div className="flex flex-col items-center">
       {currentPage == 1 && (
         <div className="hero rounded-xl bg-base-200">
@@ -75,7 +53,6 @@ export default async function Home({
                 Check it out
               </Link>
             </div>
->>>>>>> cedcca0a576eb76febcdc5c49189135b91449866
           </div>
         </div>
       )}

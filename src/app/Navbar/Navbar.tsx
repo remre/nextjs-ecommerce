@@ -18,10 +18,7 @@ async function searchProducts(formData: FormData) {
 }
 
 export default async function Navbar() {
-<<<<<<< HEAD
-=======
   const session = await getServerSession(authOptions);
->>>>>>> cedcca0a576eb76febcdc5c49189135b91449866
   const cart = await getCart();
   return (
     <div className="bg-base-100">
