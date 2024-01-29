@@ -6,8 +6,8 @@ import { getCart } from "@/lib/db/cart";
 import ShoppingCartButton from "./ShoppingCartButton";
 import UserMenuButton from "./UserMenuButton";
 import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/AuthOptions";
 // backyupauth
-import { authOptions } from "../api/auth/[...nextauth]/route";
 
 async function searchProducts(formData: FormData) {
   "use server";
