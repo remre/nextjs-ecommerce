@@ -1,7 +1,7 @@
 "use client";
 import { QuantitySelect } from "@/components/Quantity";
-import { formatPrice } from "@/lib/format";
 import { CartItemWithProduct } from "@/lib/db/cart";
+import { formatPrice } from "@/lib/Format";
 
 import Image from "next/image";
 import Link from "next/link";

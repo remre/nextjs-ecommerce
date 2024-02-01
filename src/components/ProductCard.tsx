@@ -1,4 +1,4 @@
-import { formatPrice } from "@/lib/format";
+import { formatPrice } from "@/lib/Format";
 import { Product } from "@prisma/client";
 import Link from "next/link";
 import PriceTag from "./PriceTag";

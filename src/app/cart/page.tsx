@@ -1,7 +1,7 @@
 import { getCart } from "@/lib/db/cart";
 import CartEntry from "./CartEntry";
 import setProductQuantity from "./actions";
-import { formatPrice } from "@/lib/format";
+import { formatPrice } from "@/lib/Format";
 
 export const metadata = {
   title: "Your Cart- Flowamazon",

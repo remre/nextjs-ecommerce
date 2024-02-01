@@ -1,6 +1,6 @@
 "use client";
 
-import { formatPrice } from "@/lib/format";
+import { formatPrice } from "@/lib/Format";
 import { ShoppingCart } from "@/lib/db/cart";
 import Link from "next/link";
 
