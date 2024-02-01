@@ -31,16 +31,16 @@ export default async function Home({
     take: pageSize + (currentPage === 1 ? heroItemCount : 0),
   });
   return (
-    <div className="flex flex-col items-center">
+    <div className="container mx-auto flex flex-col items-center">
       {currentPage == 1 && (
-        <div className="hero rounded-xl bg-base-200">
-          <div className="hero-content flex-col lg:flex-row">
+        <div className="bg hero rounded-xl bg-accent">
+          <div className="hero-content flex-col items-start  lg:flex-row">
             <Image
               src={products[0].imageUrl}
               alt={products[0].name}
               width={400}
-              height={800}
-              className="w-full max-w-sm rounded-lg shadow-2xl"
+              height={1200}
+              className="h-[400px] w-[500px] max-w-sm rounded-lg shadow-2xl"
               priority
             />
             <div>

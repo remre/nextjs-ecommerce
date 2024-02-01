@@ -22,8 +22,8 @@ export default async function CartPage() {
           />
         );
       })}
-      {!cart?.items.length && <p>Epty cart</p>}
-      <div className="flex flex-col items-end sm:items-center ">
+      {!cart?.items.length && <p>Empty cart</p>}
+      <div className="flex flex-col items-end sm:items-center">
         <p className="mb-3 font-bold">
           Total : {formatPrice(cart?.subtotal || 0)}
         </p>

@@ -41,23 +41,31 @@ export default async function ProductPage({
   const product = await getProduct(id);
 
   return (
-    <div className="flex flex-col  gap-4 lg:flex-row lg:items-center">
-      <Image
-        src={product.imageUrl}
-        alt={product.name}
-        width={500}
-        height={500}
-        className="rounded-lg"
-        priority
-      />
-      <div>
-        <h1 className="front-bold text-5xl">{product.name} </h1>
-        <PriceTag price={product.price} className="mt-6"></PriceTag>
-        <p className="py-6">{product.description} </p>
-        <AddToCartButton
-          productId={product.id}
-          incrementProductQuantity={incrementProductQuantity}
-        ></AddToCartButton>
+    <div className="container mx-2 flex flex-col  items-start  justify-start gap-4 gap-x-2 lg:mx-auto lg:flex-row xl:items-start">
+      <div className="mx-2 flex flex-col  xl:flex-row">
+        <Image
+          src={product.imageUrl}
+          alt={product.name}
+          width={500}
+          height={500}
+          className="rounded-xl"
+          priority
+        />
+        <div className="mx-2">
+          <h1 className="text-5xl font-bold">{product.name} </h1>
+          <PriceTag price={product.price} className="mt-6"></PriceTag>
+          <p className="py-6">{product.description} </p>
+        </div>
+      </div>
+      <div className="mx-2 box-border flex h-full w-[200px] flex-col  space-y-4 border-2 p-4 lg:mx-auto  lg:items-center">
+        <div>in stock</div>
+        <div>some unneccaasry information</div>
+        <div className="">
+          <AddToCartButton
+            productId={product.id}
+            incrementProductQuantity={incrementProductQuantity}
+          ></AddToCartButton>
+        </div>
       </div>
     </div>
   );

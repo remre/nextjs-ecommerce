@@ -6,7 +6,8 @@ import { getCart } from "@/lib/db/cart";
 import ShoppingCartButton from "./ShoppingCartButton";
 import UserMenuButton from "./UserMenuButton";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/lib/authoptions";
+import { authOptions } from "@/lib/Authoptions";
+// backyupauth
 
 async function searchProducts(formData: FormData) {
   "use server";
@@ -20,15 +21,15 @@ export default async function Navbar() {
   const session = await getServerSession(authOptions);
   const cart = await getCart();
   return (
-    <div className="bg-base-100">
-      <div className="navbar m-auto max-w-7xl flex-col gap-2 sm:flex-row">
-        <div className="flex-1">
+    <div className="container mx-auto justify-between">
+      <div className="navbar mt-5 max-w-7xl flex-col justify-between gap-2 sm:flex-row">
+        <div className="">
           <Link href="/" className="btn btn-ghost text-xl normal-case">
-            <Image src={logo} height={40} width={40} alt="flowmazon logo" />{" "}
+            <Image src={logo} height={40} width={40} alt="flowmazon logo" />
             FlowAmazon
           </Link>
         </div>
-        <div className="flex-none gap-2">
+        <div className="flex gap-2">
           <form action={searchProducts}>
             <div className="form-control">
               <input
@@ -42,6 +43,7 @@ export default async function Navbar() {
           <UserMenuButton session={session} />
         </div>
       </div>
+      <div className="divider" />
     </div>
   );
 }
