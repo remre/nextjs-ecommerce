@@ -4,7 +4,11 @@ import { useState, useTransition } from "react";
 
 interface AddToCartButtonProps {
   productId: string;
-  incrementProductQuantity: (productId: string) => Promise<void>;
+
+  incrementProductQuantity: (
+    productId: string,
+    quantity: number,
+  ) => Promise<void>;
 }
 
 export default function AddToCartButton({
@@ -13,15 +17,27 @@ export default function AddToCartButton({
 }: AddToCartButtonProps) {
   const [isPending, startTransition] = useTransition();
   const [success, setSuccess] = useState(false);
+  const [quantity, setQuantity] = useState(1);
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex flex-col items-center gap-2">
+      <select
+        className="select select-bordered w-full max-w-[80px]"
+        value={quantity}
+        onChange={(e) => setQuantity(parseInt(e.currentTarget.value))}
+      >
+        {[...Array(99)].map((_, i) => (
+          <option value={i + 1} key={i + 1}>
+            {i + 1}
+          </option>
+        ))}
+      </select>
       <button
-        className="btn btn-primary"
+        className="btn btn-primary "
         onClick={() => {
           setSuccess(false);
           startTransition(async () => {
-            await incrementProductQuantity(productId);
+            await incrementProductQuantity(productId, quantity);
             setSuccess(true);
           });
         }}
