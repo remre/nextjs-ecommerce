@@ -1,5 +1,5 @@
 import FormSubmitButton from "@/components/FormSubmit";
-import { authOptions } from "@/lib/authoptions";
+import { authOptions } from "@/lib/autOptions";
 
 import { prisma } from "@/lib/db/prisma";
 import { getServerSession } from "next-auth";
