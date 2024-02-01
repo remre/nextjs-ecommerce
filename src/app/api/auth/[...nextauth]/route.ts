@@ -1,6 +1,6 @@
 // set api endpoints
 
-import { authOptions } from "@/lib/AuthOptions";
+import { authOptions } from "@/lib/authoptions";
 
 import NextAuth from "next-auth/next";
 
