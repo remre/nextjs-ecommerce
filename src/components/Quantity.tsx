@@ -16,7 +16,7 @@ export function QuantitySelect({
 }: QuantitySelectProps) {
   const [isPending, startTransition] = useTransition();
   const quantityOptions: JSX.Element[] = [];
-  for (let i = 1; i <= 99; i++) {
+  for (let i = 1; i <= 10; i++) {
     quantityOptions.push(
       <option value={i} key={i}>
         {i}

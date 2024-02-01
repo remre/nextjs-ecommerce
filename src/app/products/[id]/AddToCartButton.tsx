@@ -26,7 +26,7 @@ export default function AddToCartButton({
         value={quantity}
         onChange={(e) => setQuantity(parseInt(e.currentTarget.value))}
       >
-        {[...Array(99)].map((_, i) => (
+        {[...Array(10)].map((_, i) => (
           <option value={i + 1} key={i + 1}>
             {i + 1}
           </option>
