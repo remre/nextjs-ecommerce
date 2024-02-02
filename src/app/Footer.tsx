@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <footer className="flex flex-grow bg-black p-10 text-neutral-content">
-      <div className="footer m-auto max-w-7xl">
+    <footer className="flex flex-grow bg-primary p-10 text-neutral-content">
+      <div className="footer m-auto max-w-7xl text-black">
         <div>
           <span className="footer-title">Services</span>
           <a className="link-hover link">Branding</a>

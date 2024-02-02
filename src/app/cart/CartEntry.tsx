@@ -30,7 +30,7 @@ export default function CartEntry({
           ></Image>
         </Link>
 
-        <div>
+        <div className="space-y-3">
           <Link href={`/products/${product.id}`} className="font-bold">
             {product.name}
           </Link>
@@ -49,6 +49,18 @@ export default function CartEntry({
               <span className=" loading loading-spinner loading-sm"></span>
             )}
           </div>
+
+          <button
+            type="button"
+            className="bg   btn  bg-red-500 text-black/60 hover:bg-red-700"
+            onClick={() => {
+              startTransition(() => {
+                setProductQuantity(product.id, 0);
+              });
+            }}
+          >
+            Remove
+          </button>
         </div>
       </div>
       <div className="divider" />
