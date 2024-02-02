@@ -23,18 +23,18 @@ const getProduct = cache(async (id: string) => {
   return product;
 });
 
-// export async function generateMetadata({
-//   params: { id },
-// }: ProductPageProps): Promise<Metadata> {
-//   const product = await getProduct(id);
-//   return {
-//     title: product.name + " - flowmazon",
-//     description: product.description,
-//     openGraph: {
-//       images: [{ url: product.imageUrl[0] }],
-//     },
-//   };
-// }
+export async function generateMetadata({
+  params: { id },
+}: ProductPageProps): Promise<Metadata> {
+  const product = await getProduct(id);
+  return {
+    title: product.name + " - flowmazon",
+    description: product.description,
+    openGraph: {
+      images: [{ url: product.imageUrl[0] }],
+    },
+  };
+}
 
 export default async function ProductPage({
   params: { id },
