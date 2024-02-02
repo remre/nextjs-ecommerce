@@ -26,7 +26,7 @@ export default function CartEntry({
             alt={product.name}
             height={200}
             width={200}
-            className="rounded-lg "
+            className="h-[200px] w-[200px] rounded-lg "
           ></Image>
         </Link>
 
