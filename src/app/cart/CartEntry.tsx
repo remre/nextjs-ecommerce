@@ -20,13 +20,16 @@ export default function CartEntry({
   return (
     <div>
       <div className="flex flex-wrap items-center gap-3">
-        <Image
-          src={product.imageUrl[1]}
-          alt={product.name}
-          height={200}
-          width={200}
-          className="rounded-lg "
-        ></Image>
+        <Link href={`/products/${product.id}`}>
+          <Image
+            src={product.imageUrl[1]}
+            alt={product.name}
+            height={200}
+            width={200}
+            className="rounded-lg "
+          ></Image>
+        </Link>
+
         <div>
           <Link href={`/products/${product.id}`} className="font-bold">
             {product.name}
