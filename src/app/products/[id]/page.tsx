@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { cache } from "react";
 import AddToCartButton from "./AddToCartButton";
 import { incrementProductQuantity } from "./actions";
+import SelectImage from "@/components/SelectImage";
 
 interface ProductPageProps {
   params: {
@@ -22,18 +23,18 @@ const getProduct = cache(async (id: string) => {
   return product;
 });
 
-export async function generateMetadata({
-  params: { id },
-}: ProductPageProps): Promise<Metadata> {
-  const product = await getProduct(id);
-  return {
-    title: product.name + " - flowmazon",
-    description: product.description,
-    openGraph: {
-      images: [{ url: product.imageUrl }],
-    },
-  };
-}
+// export async function generateMetadata({
+//   params: { id },
+// }: ProductPageProps): Promise<Metadata> {
+//   const product = await getProduct(id);
+//   return {
+//     title: product.name + " - flowmazon",
+//     description: product.description,
+//     openGraph: {
+//       images: [{ url: product.imageUrl[0] }],
+//     },
+//   };
+// }
 
 export default async function ProductPage({
   params: { id },
@@ -43,14 +44,18 @@ export default async function ProductPage({
   return (
     <div className="container mx-2 flex flex-col  items-start  justify-start gap-4 gap-x-2 lg:mx-auto lg:flex-row xl:items-start">
       <div className="mx-2 flex flex-col  xl:flex-row">
-        <Image
-          src={product.imageUrl}
+        <SelectImage
+          imageUrls={product.imageUrl}
+          name={product.name}
+        ></SelectImage>
+        {/* <Image
+          src={product.imageUrl[0]}
           alt={product.name}
           width={500}
           height={500}
           className="rounded-xl"
           priority
-        />
+        /> */}
         <div className="mx-2">
           <h1 className="text-5xl font-bold">{product.name} </h1>
           <PriceTag price={product.price} className="mt-6"></PriceTag>

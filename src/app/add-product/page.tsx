@@ -19,7 +19,7 @@ async function addProduct(formData: FormData) {
 
   const name = formData.get("name")?.toString();
   const description = formData.get("description")?.toString();
-  const imageUrl = formData.get("imageUrl")?.toString();
+  const imageUrl = formData.get("imageUrls")?.toString().split("\n");
   const price = Number(formData.get("price") || 0);
 
   if (!name || !description || !imageUrl || !price) {
@@ -58,12 +58,11 @@ export default async function addProductPage() {
           placeholder="Description"
           className="textarea textarea-bordered w-full "
         />
-        <input
-          className="input input-bordered mb-3 w-full"
+        <textarea
           required
-          name="imageUrl"
-          placeholder="Image URL"
-          type="url"
+          name="imageUrls"
+          placeholder="Image URLs (one per line)"
+          className="textarea textarea-bordered w-full"
         />
         <input
           className="input input-bordered mb-3 w-full"

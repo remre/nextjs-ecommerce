@@ -36,7 +36,7 @@ export default async function Home({
         <div className="bg hero rounded-xl bg-accent">
           <div className="hero-content flex-col items-start  lg:flex-row">
             <Image
-              src={products[0].imageUrl}
+              src={products[0].imageUrl[0]}
               alt={products[0].name}
               width={400}
               height={1200}
