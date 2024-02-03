@@ -27,7 +27,7 @@ export default async function Navbar() {
         <div className="">
           <Link href="/" className="btn btn-ghost text-xl normal-case">
             <Image src={logo} height={40} width={40} alt="flowmazon logo" />
-            FlowAmazon
+            E-commrade
           </Link>
         </div>
         <div className="flex gap-2">

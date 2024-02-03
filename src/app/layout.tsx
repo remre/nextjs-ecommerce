@@ -4,11 +4,12 @@ import "./globals.css";
 import Footer from "./Footer";
 import SessionProvider from "./SessionProvider";
 import Navbar from "./Navbar/Navbar";
-
+import logo from "@/assets/logo.png";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Flowmazon",
+  icons: "/first_logo_from_first_set.ico",
+  title: "e-commrade",
   description: "We make your wallet cry",
 };
 
@@ -19,6 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/public/first_logo_from_first_set.ico" />
+      </head>
       <body className={inter.className}>
         <SessionProvider>
           <Navbar />
