@@ -28,7 +28,7 @@ const SelectImage: React.FC<SelectImageProps> = ({ imageUrls, name }) => {
         />
       </div>
       <div className="  flex flex-col items-start xl:flex-row xl:items-center">
-        {imageUrls.slice(0, 3).map((imageUrl, index) => (
+        {imageUrls.slice(0, imageUrls.length).map((imageUrl, index) => (
           <div
             key={index}
             className="mr-[14px] mt-[14px]  cursor-pointer rounded-xl border-2 border-black/30 hover:mr-2 hover:mt-2 hover:border-4"
