@@ -28,7 +28,7 @@ export async function generateMetadata({
 }: ProductPageProps): Promise<Metadata> {
   const product = await getProduct(id);
   return {
-    title: product.name + " - flowmazon",
+    title: product.name + " - retrommerce",
     description: product.description,
     openGraph: {
       images: [{ url: product.imageUrl[0] }],
@@ -42,30 +42,28 @@ export default async function ProductPage({
   const product = await getProduct(id);
 
   return (
-    <div className="container mx-2 flex flex-col  items-start  justify-start gap-4 gap-x-2 lg:mx-auto lg:flex-row xl:items-start">
-      <div className="mx-2 flex flex-col  xl:flex-row">
+    <div className="container mx-2 flex flex-col  gap-4 gap-x-2 lg:mx-auto lg:flex-row xl:items-start">
+      <div className="mx-2 flex flex-col  items-start  justify-start xl:flex-row">
         <SelectImage
           imageUrls={product.imageUrl}
           name={product.name}
         ></SelectImage>
-        {/* <Image
-          src={product.imageUrl[0]}
-          alt={product.name}
-          width={500}
-          height={500}
-          className="rounded-xl"
-          priority
-        /> */}
-        <div className="mx-2">
-          <h1 className="text-5xl font-bold">{product.name} </h1>
-          <PriceTag price={product.price} className="mt-6"></PriceTag>
-          <p className="py-6">{product.description} </p>
+
+        <div className="mx-2  items-start justify-start text-start">
+          <div className="flex flex-col">
+            <h1 className="text-3xl font-bold">{product.name} </h1>
+
+            <p className=" py-6">{product.description} </p>
+            <PriceTag
+              price={product.price}
+              className="mt-6  text-2xl font-bold"
+            ></PriceTag>
+          </div>
         </div>
       </div>
-      <div className="mx-2 box-border flex h-full w-[200px] flex-col  space-y-4 border-2 p-4 lg:mx-auto  lg:items-center">
-        <div>in stock</div>
-        <div>some unneccaasry information</div>
-        <div className="">
+      <div className="mx-2 box-border flex flex-col  space-y-4 border-2 p-4 xl:mx-auto  xl:items-center">
+        <div>Free Delivery</div>
+        <div className="flex">
           <AddToCartButton
             productId={product.id}
             incrementProductQuantity={incrementProductQuantity}
