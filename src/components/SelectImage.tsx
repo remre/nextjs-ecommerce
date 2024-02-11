@@ -22,7 +22,7 @@ const SelectImage: React.FC<SelectImageProps> = ({ imageUrls, name }) => {
         {imageUrls.slice(0, imageUrls.length).map((imageUrl, index) => (
           <div
             key={index}
-            className=" mr-[14px] mt-[14px] scale-75 cursor-pointer  rounded-xl border-2 border-black/30 hover:mr-2 hover:mt-2.5 hover:border-4 lg:scale-100"
+            className=" mr-[14px] mt-[14px] scale-75 cursor-pointer  rounded-xl border-2 border-black/30 hover:mr-2.5 hover:mt-2.5 hover:border-4 lg:scale-100"
             onMouseOver={() => handleImageSelect(imageUrl)}
           >
             <Image
