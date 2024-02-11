@@ -17,21 +17,12 @@ const SelectImage: React.FC<SelectImageProps> = ({ imageUrls, name }) => {
   };
 
   return (
-    <div className=" mx-auto">
-      <div className="relative h-[250px] w-[200px] xl:h-[480px] xl:w-[450px]">
-        <Image
-          src={selectedImage}
-          alt={name}
-          layout="fill"
-          className="rounded-xl"
-          priority
-        />
-      </div>
-      <div className="  flex flex-col items-start xl:flex-row xl:items-center">
+    <div className=" mx-auto flex flex-row ">
+      <div className=" flex  flex-col justify-end ">
         {imageUrls.slice(0, imageUrls.length).map((imageUrl, index) => (
           <div
             key={index}
-            className="mr-[14px] mt-[14px]  cursor-pointer rounded-xl border-2 border-black/30 hover:mr-2 hover:mt-2 hover:border-4"
+            className=" mr-[14px] mt-[14px] scale-75 cursor-pointer  rounded-xl border-2 border-black/30 hover:mr-2 hover:mt-2.5 hover:border-4 lg:scale-100"
             onMouseOver={() => handleImageSelect(imageUrl)}
           >
             <Image
@@ -39,10 +30,19 @@ const SelectImage: React.FC<SelectImageProps> = ({ imageUrls, name }) => {
               alt={name}
               width={100}
               height={100}
-              className=" h-[110px] w-[110px]  rounded-lg"
+              className=" h-[90px] w-[90px]  rounded-lg "
             />
           </div>
         ))}
+      </div>
+      <div className="relative flex h-[270px] w-[200px]  xl:h-[480px] xl:w-[450px]">
+        <Image
+          src={selectedImage}
+          alt={name}
+          layout="fill"
+          className="rounded-xl"
+          priority
+        />
       </div>
     </div>
   );

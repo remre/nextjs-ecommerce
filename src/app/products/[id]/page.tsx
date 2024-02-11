@@ -42,33 +42,24 @@ export default async function ProductPage({
   const product = await getProduct(id);
 
   return (
-    <div className="container mx-2 flex flex-col  gap-4 gap-x-2 lg:mx-auto lg:flex-row xl:items-start">
-      <div className="mx-2 flex flex-col  items-start  justify-start xl:flex-row">
-        <SelectImage
-          imageUrls={product.imageUrl}
-          name={product.name}
-        ></SelectImage>
-
-        <div className="mx-2  items-start justify-start text-start">
-          <div className="flex flex-col">
-            <h1 className="text-3xl font-bold">{product.name} </h1>
-
-            <p className=" py-6">{product.description} </p>
-            <PriceTag
-              price={product.price}
-              className="mt-6  text-2xl font-bold"
-            ></PriceTag>
-          </div>
-        </div>
+    <div className="container mx-auto flex flex-col space-x-10 xl:flex-row">
+      <div className="flex items-start justify-start">
+        <SelectImage imageUrls={product.imageUrl} name={product.name} />
       </div>
-      <div className="mx-2 box-border flex flex-col  space-y-4 border-2 p-4 xl:mx-auto  xl:items-center">
+      <div className="mt-10 flex flex-col xl:basis-2/5">
+        <h1 className="text-xl font-bold"> {product.name}</h1>
+        <p>{product.description}</p>
+        <PriceTag
+          price={product.price}
+          className="mt-3 h-10 text-xl  font-semibold"
+        ></PriceTag>
+      </div>
+      <div className=" box-border flex flex-col items-center justify-center gap-10 border-2  px-6 shadow-sm">
         <div>Free Delivery</div>
-        <div className="flex">
-          <AddToCartButton
-            productId={product.id}
-            incrementProductQuantity={incrementProductQuantity}
-          ></AddToCartButton>
-        </div>
+        <AddToCartButton
+          productId={product.id}
+          incrementProductQuantity={incrementProductQuantity}
+        ></AddToCartButton>
       </div>
     </div>
   );
