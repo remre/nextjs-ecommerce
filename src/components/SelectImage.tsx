@@ -35,7 +35,7 @@ const SelectImage: React.FC<SelectImageProps> = ({ imageUrls, name }) => {
           </div>
         ))}
       </div>
-      <div className="relative flex h-[270px] w-[200px]  xl:h-[480px] xl:w-[450px]">
+      <div className="relative flex h-[350px] w-[270px]  lg:h-[520px] lg:w-[460px]">
         <Image
           src={selectedImage}
           alt={name}

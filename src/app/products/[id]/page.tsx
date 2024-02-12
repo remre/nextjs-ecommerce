@@ -54,7 +54,7 @@ export default async function ProductPage({
           className="mt-3 h-10 text-xl  font-semibold"
         ></PriceTag>
       </div>
-      <div className=" box-border flex flex-col items-center justify-center gap-10 border-2  px-6 shadow-sm">
+      <div className=" mt-2 box-border flex flex-col items-center justify-center gap-10  border-2 px-6 shadow-sm">
         <div>Free Delivery</div>
         <AddToCartButton
           productId={product.id}
