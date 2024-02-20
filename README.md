@@ -28,8 +28,6 @@ For more information on Next.js, check out the following resources:
 - [Next.js Documentation](https://nextjs.org/docs) - Detailed information on Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - An interactive tutorial on Next.js.
 
-Feel free to contribute to [the Next.js GitHub repository](https://github.com/vercel/next.js/). Your feedback and contributions are always welcome!
-
 ## Deployment
 
 For easy deployment of your Next.js app, consider using the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme), developed by the creators of Next.js.
