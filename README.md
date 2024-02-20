@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# E-Commerce Project
 
-## Getting Started
+This is an e-commerce project built using [Next.js](https://nextjs.org/), [React](https://reactjs.org/), [Tailwind CSS](https://tailwindcss.com/), [Prisma](https://www.prisma.io/), [NextAuth.js](https://next-auth.js.org/), and [Zod](https://github.com/colinhacks/zod).
 
-First, run the development server:
+## Live Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+You can view a live demo of the project [here](https://nextjs-ecommerce-ten-beta.vercel.app/).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To get started with development, follow these steps:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Clone the repository and navigate into the directory.
+2. Install the dependencies using `npm install`.
+3. Set up Prisma by running `npm run postinstall`.
+4. Start the development server using `npm run dev`.
 
-## Learn More
+After running the server, you can open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
-To learn more about Next.js, take a look at the following resources:
+The main application file is `app/page.tsx`. Changes made in this file will automatically update on the page.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) for automatic font optimization and loading of Inter, a custom Google Font.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Resources
 
-## Deploy on Vercel
+For more information on Next.js, check out the following resources:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [Next.js Documentation](https://nextjs.org/docs) - Detailed information on Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - An interactive tutorial on Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Feel free to contribute to [the Next.js GitHub repository](https://github.com/vercel/next.js/). Your feedback and contributions are always welcome!
+
+## Deployment
+
+For easy deployment of your Next.js app, consider using the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme), developed by the creators of Next.js.
+
+For more details on deployment, check out the [Next.js deployment documentation](https://nextjs.org/docs/deployment).
